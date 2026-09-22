@@ -1,0 +1,55 @@
+{
+  "name": "@galaxy-stack/orbit-database",
+  "version": "0.1.6",
+  "description": "Database module for Orbit framework with repository pattern and transaction support",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun --packages external",
+    "dev": "bun --watch src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "changeset": "changeset"
+  },
+  "dependencies": {
+    "@galaxy-stack/orbit-core": "^0.1.4"
+  },
+  "peerDependencies": {
+    "drizzle-orm": ">=0.29.0"
+  },
+  "peerDependenciesMeta": {
+    "drizzle-orm": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "drizzle-orm": "^0.29.0",
+    "typescript": "^5.0.0",
+    "pg": "^8.16.3",
+    "@types/pg": "^8.16.3",
+    "reflect-metadata": "^0.2.2",
+    "@changesets/cli": "^2.27.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galaxy-orbit/orbit-database.git"
+  },
+  "bugs": {
+    "url": "https://github.com/galaxy-orbit/orbit/issues"
+  },
+  "homepage": "https://galaxy-orbit-framework.vercel.app"
+}
